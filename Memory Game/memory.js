@@ -69,11 +69,12 @@ function checkMatch(arr) {
     let card2_name = images[card2_index].name;
     if (card1_name === card2_name) {
         console.log("It's a match!");
+        score += 2;
         setTimeout(() => {
             cards[card1_index].setAttribute("style", "visibility: hidden;");
             cards[card2_index].setAttribute("style", "visibility: hidden;");
-        }, 450);
-        score++;
+            checkScore();
+        }, 600);
     } else {
         console.log("its not a match");
         setTimeout(() => {
@@ -85,7 +86,15 @@ function checkMatch(arr) {
                 "src",
                 "./assets/question-mark.svg"
             );
-        }, 450);
+        }, 600);
     }
     console.log(score);
 }
+
+const checkScore = () => {
+    if (score === images.length) {
+        alert("Game's over! You won!");
+    } else {
+        return;
+    }
+};
