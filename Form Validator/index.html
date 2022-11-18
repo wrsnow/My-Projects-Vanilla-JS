@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Validator</title>
+        <link rel="stylesheet" href="./form.css"" />
+    </head>
+    <body>
+        <div class="form-body">
+            <div class="header">
+                <h1>FORM VALIDATOR</h1>
+            </div>
+            <div class="input-forms">
+                <div class="input-item">
+                    <label for="email-input">Email</label>
+                    <input
+                        type="email"
+                        id="email-input"
+                        placeholder="user@email.com"
+                    />
+                    <span class="display_msg" id="email"></span>
+                </div>
+                <div class="input-item">
+                    <label for="username-input">Username</label>
+                    <input
+                        type="text"
+                        id="username-input"
+                        placeholder="username"
+                    />
+                    <span class="display_msg" id="username"></span>
+                </div>
+                <div class="input-item">
+                    <label for="password-input">Password</label>
+                    <input type="password" id="password-input" />
+                    <ul class="status-password" id="password">
+                        <li>Must contain at least one Lower Character.</li>
+                        <li>Must contain at least one Upper Character.</li>
+                        <li>Must contain at least one number.</li>
+                        <li>Must contain at least one symbol.</li>
+                        <li>Cannot be lesser than 8 characters.</li>
+                    </ul>
+                </div>
+                <div class="input-item">
+                    <label for="password-input2">Confirm Password</label>
+                    <input type="password" id="password-input2" />
+                    <ul class="status_password_confirm" id="password2">
+                        <li>Must contain at least one Lower Character.</li>
+                        <li>Must contain at least one Upper Character.</li>
+                        <li>Must contain at least one number.</li>
+                        <li>Must contain at least one symbol.</li>
+                        <li>Cannot be lesser than 8 characters.</li>
+                        <li id="password-match">Password does not match!</li>
+                    </ul>
+                </div>
+                <button id="confirmBTN">CONFIRM</button>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="center-content">
+                <div class="h2-block">
+                    <h2>Form sent!</h2>
+                </div>
+                <div class="button-block">
+                    <button id="closemodalBTN">OK</button>
+                </div>
+            </div>
+        </div>
+        <script src="./form.js"></script>
+    </body>
+</html>

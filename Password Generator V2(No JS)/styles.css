@@ -1,0 +1,147 @@
+body {
+    color: white;
+    display: flex;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: linear-gradient(180deg, #14131a, #08080b, #000000);
+}
+
+*::selection {
+    background-color: #a4ffaf;
+    color: black;
+}
+
+.App {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100%;
+    background-image: linear-gradient(180deg, #14131a, #08080b, #000000);
+}
+
+.main--body {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+    height: 100%;
+    max-height: 700px;
+}
+
+.display--password {
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 440px;
+    padding: 16px;
+    width: 80%;
+    background-color: #24232b;
+    height: 40px;
+}
+.display--password h2 {
+    color: #4e4f56;
+}
+
+.password--options {
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    background-color: #24232b;
+    height: auto;
+    height: 500px;
+    padding: 16px;
+}
+
+.password--options > * {
+    gap: 6px;
+}
+
+.password--options > button {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    background-color: #a4ffaf;
+    border-radius: 0;
+}
+
+.password--options > button:active {
+    background-color: #87c88f;
+}
+
+.password--options > input {
+    width: 100%;
+    accent-color: #a4ffaf;
+}
+
+.password--options .options--information {
+    display: flex;
+    justify-content: space-between;
+}
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: auto;
+}
+.checkboxes * {
+    cursor: pointer;
+}
+
+.checkbox {
+    gap: 6px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    transition: all 0.5s;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked {
+    transition: all 0.5s;
+    background-color: #a4ffaf;
+}
+
+.strength--info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #18171f;
+    text-align: start;
+    font-size: 12px;
+    padding: 0 25px;
+    gap: 6px;
+}
+h3 {
+    opacity: 0.4;
+    margin-right: auto;
+    text-align: start;
+}
+
+.rectangle {
+    height: 20px;
+    width: 10px;
+    border: 2px solid white;
+}

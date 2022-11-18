@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(25, 25, 25);
+    height: 100vh;
+    width: 100vw;
+}
+body {
+    color: white;
+}
+.user-input-timer {
+    color: black;
+    margin: 0 auto;
+    width: 400px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 12px;
+    border-radius: 0 0 6px 6px;
+}
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.6rem;
+    display: flex;
+}
+.timer-container > input {
+    font-size: 1.6rem;
+
+    margin: auto;
+    width: 80px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+.button-container > button {
+    cursor: pointer;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    border-radius: 12px;
+    padding: 0.4rem;
+}
+.button-container > button:hover {
+    background-color: rgb(89, 89, 89);
+}
+.button-container > button:active {
+    color: black;
+    background-color: rgb(182, 182, 182);
+}
+
+.displayTimer {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

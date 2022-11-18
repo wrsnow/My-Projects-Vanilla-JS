@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Password Generator V2</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div class="main--body">
+            <h1>PASSWORD GENERATOR</h1>
+            <div class="display--password">
+                <h2>PASSWORD</h2>
+            </div>
+            <div class="password--options">
+                <div class="options--information">
+                    <label htmlFor="password-range">Character Length</label>
+                    <label htmlFor="password-range">0</label>
+                </div>
+                <input type="range" id="password-range" />
+                <br />
+                <div class="checkboxes">
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <label htmlFor="checkbox"
+                            >Include Uppercase Letters</label
+                        >
+                        <br />
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkbox2" />
+                        <label htmlFor="checkbox2"
+                            >Include Lowercase Letters</label
+                        >
+                        <br />
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkbox3" />
+                        <label htmlFor="checkbox3">Include Numbers</label>
+                        <br />
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkbox4" />
+                        <label htmlFor="checkbox4">Include Symbols</label>
+                        <br />
+                    </div>
+                </div>
+                <div class="strength--info">
+                    <h3>STRENGTH</h3>
+                    <div class="rectangle"></div>
+                    <div class="rectangle"></div>
+                    <div class="rectangle"></div>
+                    <div class="rectangle"></div>
+                </div>
+                <button>GENERATE</button>
+            </div>
+        </div>
+    </body>
+</html>

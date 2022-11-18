@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Morse Translator</title>
+        <link rel="stylesheet" href="./morse.css" />
+    </head>
+    <body>
+        <div class="text-morse">
+            <h2>TEXT TO MORSE</h2>
+            <input type="text" id="text-to-morse" value="" />
+            <span id="text-output"></span>
+            <button id="text-to-morsebtn">CONVERT</button>
+        </div>
+        <div class="morse-text">
+            <h2>MORSE TO TEXT</h2>
+            <h5>Use '/' as a separator</h5>
+            <input
+                type="text"
+                id="morse-to-text"
+                value=""
+                placeholder=".../---/..."
+            />
+            <span id="morse-output"></span>
+            <button id="morse-to-textbtn">CONVERT</button>
+        </div>
+        <script src="./morse.js"></script>
+    </body>
+</html>

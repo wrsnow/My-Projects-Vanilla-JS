@@ -1,0 +1,85 @@
+body {
+    font-weight: 600;
+    color: white;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    border-top: 2px solid rgb(86, 60, 140);
+    width: 80%;
+}
+
+input {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    width: 350px;
+    max-width: 350;
+    padding: 10px;
+    height: 200px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.text-morse {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+#text-output {
+    font-size: 1.6rem;
+    background-color: rgb(86, 60, 140);
+    min-width: 350px;
+    min-height: 20px;
+    max-width: 350px;
+    height: auto;
+    color: white;
+    word-break: break-all;
+}
+
+button {
+    width: 100px;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 3px;
+    font-weight: 600px;
+}
+
+button:active {
+    background-color: rgba(131, 85, 255, 0.8);
+    color: white;
+}
+
+.morse-text h2 {
+    border-top: 2px solid rgb(86, 60, 140);
+    margin-top: 25px;
+}
+
+.morse-text {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+#morse-output {
+    font-size: 1.6rem;
+    background-color: rgb(86, 60, 140);
+    min-width: 350px;
+    min-height: 20px;
+    max-width: 350px;
+    height: auto;
+    color: white;
+    word-break: break-all;
+}
