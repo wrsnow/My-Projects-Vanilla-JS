@@ -1,27 +1,27 @@
 const images = [
     {
-        name: "taz",
-        img: "https://www.seekpng.com/png/detail/90-902642_taz-tasmanian-devil-looney-tunes-face.png",
+        name: "bear",
+        img: "./assets/bear-face-svgrepo-com.svg",
     },
     {
-        name: "duck",
-        img: "https://i.pinimg.com/originals/12/2d/34/122d348bf0191df40d707a80cef70c79.png",
+        name: "cat",
+        img: "./assets/cat-face-svgrepo-com.svg",
     },
     {
-        name: "sylvester",
-        img: "https://cdn.quotesgram.com/img/17/75/1108463480-baby-looney-tunes-sylvester-13.jpg",
+        name: "giraffe",
+        img: "./assets/giraffe-svgrepo-com.svg",
     },
     {
-        name: "taz",
-        img: "https://www.seekpng.com/png/detail/90-902642_taz-tasmanian-devil-looney-tunes-face.png",
+        name: "bear",
+        img: "./assets/bear-face-svgrepo-com.svg",
     },
     {
-        name: "duck",
-        img: "https://i.pinimg.com/originals/12/2d/34/122d348bf0191df40d707a80cef70c79.png",
+        name: "cat",
+        img: "./assets/cat-face-svgrepo-com.svg",
     },
     {
-        name: "sylvester",
-        img: "https://cdn.quotesgram.com/img/17/75/1108463480-baby-looney-tunes-sylvester-13.jpg",
+        name: "giraffe",
+        img: "./assets/giraffe-svgrepo-com.svg",
     },
 ];
 
@@ -35,14 +35,14 @@ images.sort(() => 0.5 - Math.random());
 console.log(images);
 
 const startbtn = document.querySelector("#startBTN");
-const display_cards = document.querySelector(".item");
+const display_cards = document.querySelector(".item-container");
 let TwoCards = [];
 
 startbtn.addEventListener("click", () => {
     display_cards.innerHTML = "";
     for (let i = 0; i < images.length; i++) {
         let cards = document.createElement("img");
-        cards.setAttribute("src", "./download.png");
+        cards.setAttribute("src", "./assets/question-mark.svg");
         cards.setAttribute("data-id", i);
         cards.addEventListener("click", Flipcard);
         display_cards.appendChild(cards);
@@ -77,8 +77,14 @@ function checkMatch(arr) {
     } else {
         console.log("its not a match");
         setTimeout(() => {
-            cards[card1_index].setAttribute("src", "./download.png");
-            cards[card2_index].setAttribute("src", "./download.png");
+            cards[card1_index].setAttribute(
+                "src",
+                "./assets/question-mark.svg"
+            );
+            cards[card2_index].setAttribute(
+                "src",
+                "./assets/question-mark.svg"
+            );
         }, 450);
     }
     console.log(score);
