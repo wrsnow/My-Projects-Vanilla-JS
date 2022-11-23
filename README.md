@@ -19,7 +19,7 @@
 
 ## Countdown Timer
 
-#### wrsnow-countdowntimer.netlify.app
+#### https://wrsnow-countdowntimer.netlify.app
 
 ## Stopwatch
 
