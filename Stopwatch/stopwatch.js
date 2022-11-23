@@ -23,7 +23,7 @@ clear_btn.addEventListener("click", clearTimer);
 
 function StartTimer() {
     clearInterval(myClock_ms);
-    myClock_ms = setInterval(countUp, 100);
+    myClock_ms = setInterval(countUp, 10);
 }
 
 function countUp() {
