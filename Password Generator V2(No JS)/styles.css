@@ -50,7 +50,7 @@ body {
     height: 40px;
 }
 .display--password h2 {
-    color: #4e4f56;
+    color: #cdcdcd;
 }
 
 .password--options {
@@ -89,6 +89,7 @@ body {
 }
 
 .password--options .options--information {
+    font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
