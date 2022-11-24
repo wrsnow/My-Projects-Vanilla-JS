@@ -9,6 +9,8 @@ const DisplayPassword = document.querySelector("#displayPassword");
 
 const CheckboxDiv = document.querySelector(".checkboxes");
 
+const regex = /^(?=.*[0-9])(?=.*\W)(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9\W]+){8}$/g;
+
 const UpperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXY";
 const LowerLetters = "abcdefghijklmnopqrstuvwxyz";
 const Numbers = "0123456789";
@@ -45,9 +47,8 @@ function generatePassword(str, num) {
 
     for (let i = 0; i < num; i++) {
         let randomNum = Math.floor(Math.random() * str.length);
-        Generated += str.charAt(randomNum);
+        Generated += str[randomNum];
     }
-
     return Generated;
 }
 
