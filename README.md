@@ -2,11 +2,13 @@
 
 ## Sneak Game using Canvas
 
-##### Reset Game
+#### https://wesnow-sneak-game.netlify.app
 
-##### Score count
+###### Reset Game
 
-##### Sneak collision
+###### Score count
+
+###### Sneak collision
 
 ## Password Generator V2
 
