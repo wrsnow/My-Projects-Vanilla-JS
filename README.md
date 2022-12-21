@@ -1,5 +1,9 @@
 # Projects
 
+## Simon Game with JQuery
+
+#### https://wesnow-simon-game.netlify.app
+
 ## Sneak Game using Canvas
 
 #### https://wesnow-sneak-game.netlify.app
