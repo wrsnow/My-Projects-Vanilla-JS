@@ -19,7 +19,6 @@ $(() => {
         }
         if (pressedTimes === boxesOrder.length) {
             pressedTimes = 0;
-            console.log(userOrder);
             generateNextBox();
         }
         glowChosenBox(index, true);
@@ -58,7 +57,6 @@ function glowChosenBox(index) {
 }
 
 function checkMatch(userChoices) {
-    console.log(userChoices);
     let arrIndex = userChoices.length - 1;
     return boxesOrder[arrIndex] === userChoices[arrIndex];
 }
