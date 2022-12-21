@@ -1,8 +1,10 @@
 let boxesOrder = [];
 let userOrder = [];
 let pressedTimes = 0;
+let score = 0;
+let timeOut;
 
-let baseGlowOutValue = 300;
+let baseFadeInOut_Value = 200;
 
 $(() => {
     $("#startBTN").on("click", () => {
@@ -18,42 +20,55 @@ $(() => {
             return;
         }
         if (pressedTimes === boxesOrder.length) {
+            console.log("Final click");
             pressedTimes = 0;
-            generateNextBox();
+            score += 1;
+            $("h4").text(`Score: ${score}`);
+            glowChosenBox(index);
+            timeOut = setTimeout(() => {
+                generateNextBox();
+                disableBoxes();
+            }, baseFadeInOut_Value);
+        } else {
+            glowChosenBox(index);
         }
-        glowChosenBox(index, true);
     });
 });
 
 function glowInOrder(i = 0, arr) {
     let arrLength = arr.length;
     disableBoxes();
-
-    if (i <= arrLength) {
-        setTimeout(() => {
-            $(".square").eq(arr[i]).addClass("active");
+    if (i < arrLength) {
+        timeOut = setTimeout(() => {
+            $(".square")
+                .eq(arr[i])
+                .fadeIn(baseFadeInOut_Value)
+                .fadeOut(baseFadeInOut_Value)
+                .fadeIn(baseFadeInOut_Value);
             playAudio(arr[i]);
-        }, 50);
-        setTimeout(() => {
-            $(".square").eq(arr[i]).removeClass("active");
             i++;
             glowInOrder(i, arr);
-        }, baseGlowOutValue + 300);
+        }, baseFadeInOut_Value * 2);
     } else {
-        enableBoxes();
+        timeOut = setTimeout(() => {
+            enableBoxes();
+            return;
+        }, baseFadeInOut_Value * 1.5);
     }
 }
 
 function glowChosenBox(index) {
-    setTimeout(() => {
-        disableBoxes();
-        $(".square").eq(index).addClass("active");
-        playAudio(index);
-    }, 50);
-    setTimeout(() => {
+    disableBoxes();
+    playAudio(index);
+    $(".square")
+        .eq(index)
+        .fadeIn(baseFadeInOut_Value)
+        .fadeOut(baseFadeInOut_Value)
+        .fadeIn(baseFadeInOut_Value);
+    timeOut = setTimeout(() => {
         enableBoxes();
-        $(".square").eq(index).removeClass("active");
-    }, baseGlowOutValue);
+        return;
+    }, baseFadeInOut_Value);
 }
 
 function checkMatch(userChoices) {
@@ -69,12 +84,12 @@ function enableBoxes() {
 }
 
 function startGame() {
-    boxesOrder = [];
+    clearTimeout(timeOut);
+    clearPreviousData();
     for (let i = 0; i < 3; i++) {
         boxesOrder.push(randomNumber());
     }
     glowInOrder(0, boxesOrder);
-    enableBoxes();
 }
 
 function getNextChallenge() {
@@ -83,21 +98,22 @@ function getNextChallenge() {
 }
 
 function wrongChoice(index) {
-    userOrder = [];
-    pressedTimes = 0;
-    setTimeout(() => {
+    clearPreviousData();
+    timeOut = setTimeout(() => {
         disableBoxes();
-        $(".square").eq(index).addClass("active");
+        $(".square")
+            .eq(index)
+            .fadeIn(baseFadeInOut_Value)
+            .fadeOut(baseFadeInOut_Value)
+            .fadeIn(baseFadeInOut_Value);
         playAudio("wrong");
     }, 50);
-    setTimeout(() => {
-        $(".square").eq(index).removeClass("active");
-        alert("Game over!");
-    }, baseGlowOutValue);
+    timeOut = setTimeout(() => alert("Game over!"), baseFadeInOut_Value + 100);
 }
 
 function playAudio(index) {
     let audio = new Audio(`./sounds/${index}.mp3`);
+    audio.volume = 0.125;
     audio.play();
 }
 
@@ -105,11 +121,18 @@ function generateNextBox() {
     userOrder = [];
     pressedTimes = 0;
     boxesOrder.push(randomNumber());
-    setTimeout(() => getNextChallenge(), 1200);
+    timeOut = setTimeout(() => getNextChallenge(), 800);
 }
 
 function randomNumber() {
     return Math.floor(Math.random() * 4);
+}
+function clearPreviousData() {
+    userOrder = [];
+    boxesOrder = [];
+    pressedTimes = 0;
+    $("h4").text(`Score: 0`);
+    score = 0;
 }
 
 disableBoxes();
