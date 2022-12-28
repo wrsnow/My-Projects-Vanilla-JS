@@ -5,6 +5,7 @@ let score = 0;
 let timeOut;
 
 let baseFadeInOut_Value = 200;
+disableBoxes();
 
 $(() => {
     $("#startBTN").on("click", () => {
