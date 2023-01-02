@@ -4,6 +4,9 @@
 
 #### https://wesnow-weather-app.netlify.app
 
+-   Backend with nodeJs, expressJs
+-   Open Weather API
+
 ## Basic Login and Sign Up Page
 
 #### https://wesnow-login-page.netlify.app
