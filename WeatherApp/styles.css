@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #303030;
+    color: #fff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+button {
+    cursor: pointer;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.container-wrapper {
+    position: relative;
+    margin: 6rem auto;
+    width: 638px;
+    height: 603px;
+    background-color: #282828;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 40px;
+    height: auto;
+    padding: 0.4rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #282828;
+    border-radius: 4px 4px 0 0;
+}
+.header > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    height: 40px;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 2px;
+}
+
+.header > button > span > svg {
+    text-align: center;
+    display: block;
+}
+
+/* Header END */
+.wrapper {
+    display: flex;
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+}
+.wrapper button {
+    width: 5%;
+}
+.wrapper button:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wrapper button:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+.first-container {
+    flex: none;
+    width: 100%;
+    transform: translateX(-00%);
+}
+
+.location-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    text-align: center;
+}
+
+.country-flag {
+    width: 20px;
+}
+
+.weather-status-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.icon > img {
+    width: 80px;
+}
+
+.weather-condition {
+    text-transform: capitalize;
+}
+
+.temperature-measure {
+    font-size: 2rem;
+}
+.temperature-symbol {
+    font-size: 0.6rem;
+}
+
+.min-max-container {
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    gap: 45%;
+    margin-bottom: 2rem;
+    font-weight: 100;
+}
+
+/* .min,
+.max {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+.extra-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60%;
+}
+.extra-info-wrapper .humidity,
+.extra-info-wrapper .pressure {
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem 0;
+}
+.extra-info-wrapper .info-name {
+    font-size: 1.2rem;
+}
+.extra-info-wrapper .info-data {
+    font-size: 0.7rem;
+}
+
+/* Search Bar Container */
+
+.search-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.search-bar {
+    width: 260px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.search-bar:has(input:focus) {
+    outline: 2px solid rgb(209, 116, 66);
+}
+.search-bar > input {
+    border: none;
+    background-color: transparent;
+    padding: 0 0.7rem;
+}
+.search-bar > input:focus-visible {
+    outline: none;
+}
+
+.search-bar .map-icon-wrapper {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    aspect-ratio: 1;
+    background-color: #c9c9c9;
+    border-radius: 0 4px 4px 0;
+}
+
+.map-icon-wrapper > button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.map-icon-wrapper > button svg {
+    display: block;
+    height: 20px;
+}
+
+.search-btn > button {
+    font-weight: 600;
+    border: none;
+    padding: 0.6rem 2.6rem;
+    border-radius: 4px;
+}
+/* END */
+
+@media (max-width: 767px) {
+    .container-wrapper {
+        width: 90%;
+    }
+}
+@media (max-width: 551px) {
+    .country-flag {
+        width: 13px;
+    }
+    h1 {
+        font-size: 1rem;
+    }
+    .weather-condition {
+        font-size: 0.8rem;
+    }
+    .temperature-measure {
+        font-size: 0.8rem;
+    }
+    .extra-info-wrapper .info-name {
+        font-size: 1rem;
+    }
+    .extra-info-wrapper .info-data {
+        font-size: 0.7rem;
+    }
+}
+
+/* Raining Snow */
+
+.flurry-container {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.snow {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    display: block;
+    /* transition: 6s linear;
+	transform: translate(0px, 600px) rotate(0.75turn); */
+}

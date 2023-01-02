@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap");
+        </style>
+        <title>Weather App</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div class="container-wrapper">
+            <div class="flurry-container" id="flurryContainer"></div>
+            <div class="header">
+                <!-- <button>
+                    <span
+                        ><svg
+                            width="29"
+                            height="20"
+                            viewBox="0 0 29 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M7.291 14.129c-.367 0-.664-.336-.664-.752s.297-.752.664-.752h11.73c.049 0 .097.006.142.018.42.073.813.207 1.165.422.388.237.72.565.975 1.005.88 1.506.75 2.904.128 3.937a3.455 3.455 0 0 1-1.701 1.44c-.685.265-1.444.291-2.128.007-1.037-.43-1.878-1.522-2-3.5-.026-.414.25-.77.616-.8.365-.028.68.285.705.698.08 1.277.55 1.953 1.128 2.191.39.16.838.14 1.252-.02.42-.163.794-.463 1.032-.858.34-.566.39-1.364-.14-2.271a1.454 1.454 0 0 0-.497-.512 2.046 2.046 0 0 0-.715-.255H7.291v.002ZM4.26 7.368c-.368 0-.665-.336-.665-.752s.297-.752.665-.752h11.694c.267-.046.509-.129.717-.256.198-.121.367-.289.498-.511.53-.907.477-1.705.139-2.271a2.087 2.087 0 0 0-1.032-.858c-.414-.16-.863-.18-1.252-.02-.575.237-1.048.914-1.128 2.19-.025.414-.34.726-.705.698-.366-.029-.642-.385-.617-.798.123-1.98.964-3.072 2-3.501.686-.282 1.444-.256 2.129.008.68.263 1.297.767 1.701 1.439.621 1.033.751 2.43-.128 3.937-.256.44-.587.767-.975 1.005a3.288 3.288 0 0 1-1.165.421.647.647 0 0 1-.141.018H4.259v.003ZM1.404 10.75c-.367 0-.664-.339-.664-.752 0-.416.297-.752.664-.752h24.45c.267-.046.51-.13.715-.256.199-.121.367-.289.498-.511.53-.907.477-1.705.139-2.271a2.086 2.086 0 0 0-1.032-.858c-.413-.16-.863-.18-1.252-.02-.575.237-1.048.914-1.128 2.19-.025.414-.34.726-.705.698-.366-.029-.642-.385-.617-.799.124-1.979.964-3.071 2-3.5.686-.282 1.444-.256 2.129.007.68.264 1.297.768 1.701 1.44.621 1.033.751 2.43-.128 3.937a2.81 2.81 0 0 1-.975 1.005 3.286 3.286 0 0 1-1.165.421.647.647 0 0 1-.141.018H1.404v.003Z"
+                                fill="#000"
+                            />
+                        </svg>
+                    </span>
+                </button> -->
+            </div>
+            <div class="location-name">
+                <h1 id="location">City</h1>
+                <span><img class="country-flag" src="" alt="" /></span>
+            </div>
+            <div class="weather-status-wrapper">
+                <div class="icon">
+                    <img
+                        id="weatherIcon"
+                        src="https://openweathermap.org/img/wn/01d@2x.png"
+                        alt=""
+                    />
+                </div>
+                <div class="weather-condition" id="weatherCondition"></div>
+                <div class="current-temperature">
+                    <span class="temperature-measure" id="currentTemp">0</span>
+                    <span class="temperature-symbol">°C</span>
+                </div>
+            </div>
+            <div class="min-max-container">
+                <div class="min">
+                    <span class="temperature-measure" id="minTemp">0</span>
+                    <span class="temperature-symbol">°C</span>
+                    <span
+                        ><svg
+                            width="8"
+                            height="12"
+                            viewBox="0 0 8 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M3.646 11.354a.5.5 0 0 0 .708 0l3.182-3.182a.5.5 0 1 0-.708-.708L4 10.293 1.172 7.464a.5.5 0 1 0-.708.708l3.182 3.182ZM3.5 0v11h1V0h-1Z"
+                                fill="#7AE7FF"
+                            />
+                            <path
+                                d="M3.646 11.354a.5.5 0 0 0 .708 0l3.182-3.182a.5.5 0 1 0-.708-.708L4 10.293 1.172 7.464a.5.5 0 1 0-.708.708l3.182 3.182ZM3.5 0v11h1V0h-1Z"
+                                fill="#7AE7FF"
+                            />
+                            <path
+                                d="M3.646 11.354a.5.5 0 0 0 .708 0l3.182-3.182a.5.5 0 1 0-.708-.708L4 10.293 1.172 7.464a.5.5 0 1 0-.708.708l3.182 3.182ZM3.5 0v11h1V0h-1Z"
+                                fill="#7AE7FF"
+                            />
+                        </svg>
+                    </span>
+                    <br />
+                    <small>Min</small>
+                </div>
+                <div class="max">
+                    <span>
+                        <svg
+                            width="8"
+                            height="12"
+                            viewBox="0 0 8 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.353.647a.5.5 0 0 0-.707 0L.464 3.829a.5.5 0 0 0 .707.707L4 1.707l2.828 2.829a.5.5 0 0 0 .707-.707L4.353.647ZM4.5 12V1h-1v11h1Z"
+                                fill="#D82121"
+                            />
+                            <path
+                                d="M4.353.647a.5.5 0 0 0-.707 0L.464 3.829a.5.5 0 0 0 .707.707L4 1.707l2.828 2.829a.5.5 0 0 0 .707-.707L4.353.647ZM4.5 12V1h-1v11h1Z"
+                                fill="#D82121"
+                            />
+                            <path
+                                d="M4.353.647a.5.5 0 0 0-.707 0L.464 3.829a.5.5 0 0 0 .707.707L4 1.707l2.828 2.829a.5.5 0 0 0 .707-.707L4.353.647ZM4.5 12V1h-1v11h1Z"
+                                fill="#D82121"
+                            />
+                        </svg>
+                    </span>
+                    <span class="temperature-measure" id="maxTemp">0</span>
+                    <span class="temperature-symbol">°C</span>
+                    <br />
+                    <small>Max</small>
+                </div>
+            </div>
+            <div class="extra-info-wrapper">
+                <div class="humidity">
+                    <span class="info-name">Humidity</span>
+                    <span class="info-data" id="humidityValue">0%</span>
+                </div>
+                <div class="pressure">
+                    <span class="info-name">Pressure</span>
+                    <span class="info-data" id="pressureValue">0 mb</span>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Search by city name..."
+                        id="city_name"
+                    />
+                    <div class="map-icon-wrapper">
+                        <button id="geolocationBtn">
+                            <svg
+                                width="20"
+                                height="33"
+                                viewBox="0 0 20 33"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18.384 15.233 9.967 31.87 1.364 14.95l17.02.284Z"
+                                    fill="#F30505"
+                                    stroke="#F30505"
+                                />
+                                <circle cx="10" cy="10" r="10" fill="#F30505" />
+                                <circle
+                                    cx="10"
+                                    cy="10"
+                                    r="6.061"
+                                    fill="#E2E2E2"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-btn">
+                    <button id="submitBTN">GO</button>
+                </div>
+            </div>
+        </div>
+        <!-- <button id="getlocationBTN">GET GEOLOCATION</button> -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
