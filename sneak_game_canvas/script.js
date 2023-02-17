@@ -5,6 +5,8 @@ canvas.width = 600;
 let drawing;
 let velocity = 20;
 let snakeMovement;
+const snakeColorHead = "#33691a";
+const snakeColorTail = "#60bf34";
 const score = document.querySelector("#score");
 
 let foodLocation = {
@@ -45,15 +47,15 @@ let snake = {
             );
         }
 
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = snakeColorHead;
         ctx.fillRect(this.x, this.y, this.size, this.size);
-        let randomColor = "grey";
+        let tailColor = snakeColorTail;
         for (let pieces = 1; pieces < this.quantity + 1; pieces++) {
             let currentX =
                 this.oldPositions[this.oldPositions.length - pieces][0];
             let currentY =
                 this.oldPositions[this.oldPositions.length - pieces][1];
-            ctx.fillStyle = randomColor;
+            ctx.fillStyle = tailColor;
             ctx.fillRect(currentX, currentY, this.size, this.size);
         }
 
