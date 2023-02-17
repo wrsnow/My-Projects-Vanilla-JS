@@ -4,6 +4,8 @@
 
 #### https://wesnow-weather-app.netlify.app
 
+##### First request might take a while to load, since the server has to go online first.
+
 -   Backend with nodeJs, expressJs
 -   Open Weather API
 
