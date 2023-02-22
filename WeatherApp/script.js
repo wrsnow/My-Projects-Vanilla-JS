@@ -1,5 +1,3 @@
-const getLocationButton = document.querySelector("#geolocationBtn");
-
 const currentTemp = document.querySelector("#currentTemp");
 const minTemp = document.querySelector("#minTemp");
 const maxTemp = document.querySelector("#maxTemp");
@@ -9,33 +7,38 @@ const weatherIcon = document.querySelector("#weatherIcon");
 const humidityValue = document.querySelector("#humidityValue");
 const pressureValue = document.querySelector("#pressureValue");
 
-const submitBTN = document.querySelector("#submitBTN");
+const getGeolocationBTN = document.querySelector("#get-location-btn");
+const searchBTN = document.querySelector("#search-btn");
 const cityName = document.querySelector("#city_name");
 
 const countryFlagContainer = document.querySelector(".country-flag");
 let isQuerySearchEnabled = true;
 let queryInterval;
 
+let popUpTimer;
+
 const URL = "https://pond-judicious-fright.glitch.me/weather";
 
-getLocationButton.addEventListener("click", () => {
+getGeolocationBTN.addEventListener("click", () => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 });
 
-submitBTN.addEventListener("click", () => {
+searchBTN.addEventListener("click", () => {
     let city = cityName.value;
     console.log(city);
     cityName.value = "";
     if (!city) {
-        alert("City name is required.");
+        popUp("City name is required");
+        // popUp("City name is required.");
         return;
     }
     if (isQuerySearchEnabled && city) {
         fetchByCityName(city).then((data) => displayData(data));
+        popUp("Success!");
         disableSearch();
         return;
     } else {
-        alert("Must wait for 10 seconds between requests.");
+        popUp("Must wait for 10 seconds between requests.");
         return;
     }
 });
@@ -43,20 +46,20 @@ submitBTN.addEventListener("click", () => {
 const successCallback = (position) => {
     const { latitude, longitude } = position.coords;
     if (isQuerySearchEnabled) {
-        alert("Success!");
+        popUp("Success!");
         fetchByGeolocation(latitude, longitude).then((data) =>
             displayData(data)
         );
         disableSearch();
         return;
     }
-    alert("Must wait for 10 seconds between requests.");
+    popUp("Must wait for 10 seconds between requests.");
 
     return;
 };
 
 const errorCallback = () => {
-    alert("Location permision failed.");
+    popUp("Location permision failed.");
 };
 
 async function fetchByGeolocation(lat, long) {
@@ -68,7 +71,7 @@ async function fetchByGeolocation(lat, long) {
 
         return res.data;
     } catch (error) {
-        alert(error.response.data.message);
+        popUp(error.response.data.message);
         console.log(error);
     }
 }
@@ -79,7 +82,7 @@ async function fetchByGeolocation(lat, long) {
 //         const res = await axios.get(`${URL}/bycityname/${city}`);
 //         return res.data;
 //     } catch (error) {
-//         alert(error.response.data.message);
+//         popUp(error.response.data.message);
 //         console.log(error);
 //     }
 // }
@@ -90,7 +93,7 @@ async function fetchByCityName(city) {
         });
         return res.data;
     } catch (error) {
-        alert(error.response.data.message);
+        popUp(error.response.data.message);
         console.log(error);
     }
 }
@@ -113,9 +116,9 @@ function displayData(data) {
     const { country } = data.sys;
     const iconUrl = `https://openweathermap.org/img/wn/${icon}@4x.png`;
 
-    currentTemp.textContent = Math.ceil(temp);
-    minTemp.textContent = Math.ceil(temp_min);
-    maxTemp.textContent = Math.ceil(temp_max);
+    currentTemp.textContent = Math.round(temp);
+    minTemp.textContent = Math.round(temp_min);
+    maxTemp.textContent = Math.round(temp_max);
     currentLocation.textContent = name;
     weatherCondition.textContent = description;
     weatherIcon.setAttribute("src", iconUrl);
@@ -176,3 +179,13 @@ async function fetchCountryFlag(countryCode) {
 // const randomFontSize = () => {
 //     return Math.ceil(Math.random() * 28);
 // };
+
+function popUp(msg) {
+    clearTimeout(popUpTimer);
+    let notification = document.querySelector(".notification");
+    notification.classList.add("active");
+    notification.innerHTML = `<h1>${msg}</h1>`;
+    popUpTimer = setTimeout(() => {
+        notification.classList.remove("active");
+    }, 2600);
+}
