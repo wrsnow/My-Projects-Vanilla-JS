@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stopwatch (OOP)</title>
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+            * {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                font: inherit;
+            }
+            body {
+                font-size: 3rem;
+                font-family: monospace;
+                display: flex;
+                gap: 1.8rem;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #333;
+                color: #fff;
+                min-height: 100vh;
+                font-size: clamp(1rem, 15vw, 3rem);
+            }
+            body button {
+                cursor: pointer;
+                font-size: 1rem;
+                padding: 0.6rem;
+            }
+            img,
+            picture,
+            svg,
+            video {
+                display: block;
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="display-time">--:--:--:--</h1>
+        <div class="container">
+            <button id="stop-btn">STOP</button>
+            <button id="pause-btn">PAUSE</button>
+            <button id="start-btn">START</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
